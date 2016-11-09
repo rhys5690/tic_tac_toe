@@ -1,5 +1,6 @@
 * {
   color:blue;
+  background-color: ghostwhite
 }
 
 h1 {
@@ -31,6 +32,10 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto
+}
+
+button:hover {
+  background-color: red;
 }
 
 /* #circle {
