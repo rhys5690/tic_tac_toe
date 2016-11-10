@@ -1,14 +1,5 @@
 
-//Animation to start game
 
-// var startAnimation = function(start) {
-//     $("middleMiddle").html("3");
-//     $("middleMiddle").css({
-//         "font-size": "100px"
-//         "color": "black",
-//
-//     });
-// };
 var playerTurn = "X";
 
 var getTurn = function(el) {
@@ -20,7 +11,7 @@ var getTurn = function(el) {
         } else {
         placeO(el);
         }
-        }
+    }
 
 };
 
@@ -57,8 +48,38 @@ var boardHide = function() {
 
 //Game over show image
 
-var gameOver = function() {
+var gameOverX = function() {
     endCat.show();
+    endCat.animate ({
+        "opacity": 1,
+        "width": "500px",
+        "height":"1000px",
+    }, 6000, function() {
+        console.log("hello");
+});
+
+var topText = $("h1");
+topText.html("X WINS!");
+
+
+
+};
+
+var gameOverO = function() {
+    endCat.show();
+    endCat.animate ({
+        "opacity": 1,
+        "width": "500px",
+        "height":"1000px",
+    }, 6000, function() {
+        console.log("hello");
+});
+
+var topText = $("h1");
+topText.html("O WINS!");
+
+
+
 };
 
 
@@ -80,70 +101,70 @@ var gameLogic = function() {
 
 
     if ($(".topLeft").html() + $(".topMiddle").html() + $(".topRight").html() === "XXX") {
-        gameOver();
+        gameOverX();
         boardHide();
     } else if ($(".middleLeft").html() + $(".middleMiddle").html() + $(".middleRight").html() === "XXX") {
         console.log("X WINS!!");
-        gameOver();
+        gameOverX();
         boardHide();
     } else if ($(".bottomLeft").html() + $(".bottomMiddle").html() + $(".bottomRight").html() === "XXX") {
         console.log("X WINS!!");
-        gameOver();
+        gameOverX();
         boardHide();
     } else if ($(".topLeft").html() + $(".middleLeft").html() + $(".bottomLeft").html() === "XXX") {
         console.log("X WINS!!");
-        gameOver();
+        gameOverX();
         boardHide();
     } else if ($(".topMiddle").html() + $(".middleMiddle").html() + $(".bottomMiddle").html() === "XXX") {
         console.log("X WINS!!");
-        gameOver();
+        gameOverX();
         boardHide();
     } else if ($(".topRight").html() + $(".middleRight").html() + $(".bottomRight").html() === "XXX") {
         console.log("X WINS!!");
-        gameOver();
+        gameOverX();
         boardHide();
     } else if ($(".topLeft").html() + $(".middleMiddle").html() + $(".bottomRight").html() === "XXX") {
         console.log("X WINS!!");
-        gameOver();
+        gameOverX();
         boardHide();
     } else if ($(".topRight").html() + $(".middleMiddle").html() + $(".bottomLeft").html() === "XXX") {
         console.log("X WINS!!");
-        gameOver();
+        gameOverX();
         boardHide();
 
 
 ///O wins
     } else if ($(".topLeft").html() + $(".topMiddle").html() + $(".topRight").html() === "OOO") {
         console.log("O WINS!!");
-        gameOver();
+        gameOverO();
         boardHide();
     } else if ($(".middleLeft").html() + $(".middleMiddle").html() + $(".middleRight").html() === "OOO") {
         console.log("O WINS!!");
-        gameOver();
+        gameOverO();
         boardHide();
     } else if ($(".bottomLeft").html() + $(".bottomMiddle").html() + $(".bottomRight").html() === "OOO") {
         console.log("O WINS!!");
-        gameOver();
+        gameOverO();
         boardHide();
     } else if ($(".topLeft").html() + $(".middleLeft").html() + $(".bottomLeft").html() === "OOO") {
         console.log("O WINS!!");
-        gameOver();
+        gameOverO();
         boardHide();
     } else if ($(".topMiddle").html() + $(".middleMiddle").html() + $(".bottomMiddle").html() === "OOO") {
         console.log("O WINS!!");
-        gameOver();
+        gameOverO();
         boardHide();
     } else if ($(".topRight").html() + $(".middleRight").html() + $(".bottomRight").html() === "OOO") {
         console.log("O WINS!!");
-        gameOver();
+        gameOverO();
         boardHide();
     } else if ($(".topLeft").html() + $(".middleMiddle").html() + $(".bottomRight").html() === "OOO") {
         console.log("O WINS!!");
-        gameOver();
+        gameOverO();
         boardHide();
     } else if ($(".topRight").html() + $(".middleMiddle").html() + $(".bottomLeft").html() === "OOO") {
         console.log("O WINS!!");
-        gameOver();
+        gameOverO();
         boardHide();
     }
 
@@ -159,7 +180,3 @@ $classOfButton.on("click", function() {
 });
 
 $classOfButton.on("click", gameLogic);
-
-
-///Create animation
-// $(".middleMiddle").animate(startAnimation, 1000, "")
